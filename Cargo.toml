@@ -1,0 +1,14 @@
+[package]
+name = "php-from-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7.5"
+clap = { version = "4.5.17", features = ["derive"] }
+ctrlc = "3.4.5"
+fastcgi-client = "0.9.0"
+futures = "0.3.30"
+nix = { version = "0.29.0", features = ["process"] }
+tokio = { version = "1.40.0", features = ["full"] }
+tokio-util = { version = "0.7.12", features = ["full"] }
