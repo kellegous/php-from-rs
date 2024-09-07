@@ -98,7 +98,7 @@ async fn dispatch_to_fpm(config: &FpmConfig, req: Request) -> Result<Response, B
     futures::pin_mut!(br);
 
     // This is super stupid. So first of all, we read the entire fcgi response into memory, parse out the headers, make another clone
-    // of the response just to discard the header previous from the original buffer because we need to return something in the response
+    // of the body just to discard the header previous from the original buffer because we need to return something in the response
     // that it can own.
     let res = client
         .execute(fastcgi_client::Request::new(params, &mut br))
